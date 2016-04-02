@@ -1,0 +1,10 @@
+/**
+ * @file
+ * Style for the Twig helper theme.
+ */
+#elements-content /deep/ .webkit-html-comment {
+  display: none !important;
+}
+#elements-content /deep/ .elements-disclosure li {
+  min-height: 0 !important;
+}
