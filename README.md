@@ -1,5 +1,5 @@
 # Drupal Template Helper
-A Chrome DevTools extension for Drupal templates.
+A Chrome DevTools extension for Drupal templates: https://chrome.google.com/webstore/detail/ppiceaegogijpjodfpiimifhbnaifbnn
 
 ![drupal-template-helper](https://cloud.githubusercontent.com/assets/124599/14293486/d561f37e-fb7d-11e5-8ed0-952d520678a4.png)
 
