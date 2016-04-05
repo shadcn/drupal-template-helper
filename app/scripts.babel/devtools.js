@@ -2,18 +2,17 @@
 
 // Twig DevTools Panel.
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   // Create a port for messaging between devtools.js and background.js
-  var port = chrome.runtime.connect({name: "drupal-twig-helper"});
+  var port = chrome.runtime.connect({ name: "drupal-twig-helper" });
 
   // Ask the background page for the current tab url.
   try {
     port.postMessage({
       'sender': 'drupal-twig-helper-devtools',
-      'message': 'current-tab-url',
+      'message': 'current-tab-url'
     });
-  }
-  catch(e) {
+  } catch (e) {
     console.log(e);
   }
 
@@ -29,15 +28,15 @@ window.addEventListener('load', function() {
 var DrupalTwigHelperDevtools = {
 
   // Determines if the devtools panels should be shown.
-  showForURL: function(url) {
+  showForURL: function (urlString) {
     DrupalTwigHelperOptions.get(['enabledSites'], function (settings) {
-      // Strip trailing slash.
-      url = url.replace(/(\s|\/$)/gi, '');
+      // Create a URL object from urlString.
+      var url = new URL(urlString);
 
       // Enable devtools panels if url matches.
       var enabledURLs = settings.enabledSites.split(',');
       for (var i in enabledURLs) {
-        if (url == enabledURLs[i].replace(/(\s|\/$)/gmi, '')) {
+        if (url.origin == enabledURLs[i].replace(/(\s|\/$)/gmi, '')) {
           DrupalTwigHelperDevtools.create();
           break;
         }
@@ -46,7 +45,7 @@ var DrupalTwigHelperDevtools = {
   },
 
   // Creates the devtools panels.
-  create: function() {
+  create: function () {
     // Inject css into the devtools panel.
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "../css/theme.css", false);
@@ -62,4 +61,4 @@ var DrupalTwigHelperDevtools = {
       sidebar.setHeight('100vh');
     });
   }
-}
+};

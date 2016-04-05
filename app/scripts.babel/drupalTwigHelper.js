@@ -27,6 +27,11 @@ var TEMPLATE_HELPER_REGEX = {
     "title" : "Hook",
     "regex" : "^THEME\\s?HOOK\\s?:\\s?\\'(.*)\\'$",
     "modifier" : "i",
+  },
+  "d7_theme_hook": {
+    "title" : "Hook",
+    "regex" : "^CALL\\:\\s?theme\\(\\'(.*)\\'\\)$",
+    "modifier" : "i",
   }
 };
 
@@ -79,7 +84,7 @@ var DrupalTwigHelper = {
 
   // Parses a comment string into a renderable template object.
   parseComment: function (comment) {
-    var output = [];
+    var output = {};
 
     for (var name in TEMPLATE_HELPER_REGEX) {
       var templateHelperInfo = TEMPLATE_HELPER_REGEX[name];
@@ -157,9 +162,8 @@ var DrupalTwigHelper = {
         }
 
         listItem.appendChild(valuesList);
+        list.appendChild(listItem);
       }
-
-      list.appendChild(listItem);
     }
 
     $TWIG_PANEL.innerHTML = '';

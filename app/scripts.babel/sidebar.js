@@ -5,12 +5,7 @@
 
 // Show Twig templates when Twig panel is opened.
 window.addEventListener('load', function() {
-  // DrupalTwigHelperOptions.get(['enabledSites'], function (settings) {
-  //   console.log(settings);
-  // });
-
   DrupalTwigHelper.showTwigTemplates();
-
 });
 
 // Show Twig templates when an element is selected in the Elements panel.
