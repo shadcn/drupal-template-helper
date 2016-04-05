@@ -3,6 +3,7 @@
 // Drupal Template Helper.
 
 // The comment node type.
+
 var COMMENT_NODE_TYPE = 8;
 
 // The Template panel element.
@@ -13,25 +14,25 @@ var TEMPLATE_HELPER_ERROR_MESSAGE = 'No templates found.';
 
 // Template helper info.
 var TEMPLATE_HELPER_REGEX = {
-  "current_template" : {
-    "title" : "Current template",
-    "regex" : "^BEGIN\\s?OUTPUT\\s?from\\s?\\'(.*)\\'$",
-    "modifier" : "i",
+  "current_template": {
+    "title": "Current template",
+    "regex": "^BEGIN\\s?OUTPUT\\s?from\\s?\\'(.*)\\'$",
+    "modifier": "i"
   },
   "template_suggestions": {
-    "title" : "Template suggestions",
-    "regex" : "([\\*|x]\\s{1}\\S*)",
-    "modifier" : "gmi",
+    "title": "Template suggestions",
+    "regex": "([\\*|x]\\s{1}\\S*)",
+    "modifier": "gmi"
   },
   "theme_hook": {
-    "title" : "Hook",
-    "regex" : "^THEME\\s?HOOK\\s?:\\s?\\'(.*)\\'$",
-    "modifier" : "i",
+    "title": "Hook",
+    "regex": "^THEME\\s?HOOK\\s?:\\s?\\'(.*)\\'$",
+    "modifier": "i"
   },
   "d7_theme_hook": {
-    "title" : "Hook",
-    "regex" : "^CALL\\:\\s?theme\\(\\'(.*)\\'\\)$",
-    "modifier" : "i",
+    "title": "Hook",
+    "regex": "^CALL\\:\\s?theme\\(\\'(.*)\\'\\)$",
+    "modifier": "i"
   }
 };
 
@@ -39,7 +40,7 @@ var TEMPLATE_HELPER_REGEX = {
 var DrupalTemplateHelper = {
 
   // Return Theme debug comments for an element.
-  getCommentsForElement: function (element) {
+  getCommentsForElement: function getCommentsForElement(element) {
     var comments = [];
 
     // Loop through previous siblings until we hit <-- THEME DEBUG -->.
@@ -56,7 +57,7 @@ var DrupalTemplateHelper = {
   },
 
   // Show Template templates callback.
-  showTemplates: function () {
+  showTemplates: function showTemplates() {
     chrome.devtools.inspectedWindow.eval("(" + DrupalTemplateHelper.getCommentsForElement.toString() + ")($0)", function (result, exceptionInfo) {
       // Log message if error.
       if (typeof exceptionInfo !== 'undefined') {
@@ -71,7 +72,7 @@ var DrupalTemplateHelper = {
   },
 
   // Returns an array of templates from Template helper comments.
-  getTemplatesFromComments: function (comments) {
+  getTemplatesFromComments: function getTemplatesFromComments(comments) {
     var templates = [];
 
     for (var i in comments) {
@@ -83,7 +84,7 @@ var DrupalTemplateHelper = {
   },
 
   // Parses a comment string into a renderable template object.
-  parseComment: function (comment) {
+  parseComment: function parseComment(comment) {
     var output = {};
 
     for (var name in TEMPLATE_HELPER_REGEX) {
@@ -102,7 +103,6 @@ var DrupalTemplateHelper = {
             output.values.push(matches[1]);
           }
         }
-
       }
     }
 
@@ -110,11 +110,11 @@ var DrupalTemplateHelper = {
   },
 
   // Logs a message to the Template panel.
-  log: function (message) {
+  log: function log(message) {
     $TEMPLATE_PANEL.innerHTML = '<p class="message">' + message + '<p>';
   },
 
-  logTemplates: function (templates) {
+  logTemplates: function logTemplates(templates) {
     var list = document.createElement('ul');
 
     for (var i in templates) {
@@ -152,7 +152,7 @@ var DrupalTemplateHelper = {
           var button = document.createElement('button');
           button.innerHTML = 'Copy';
           button.value = safeValue;
-          button.addEventListener('click', function() {
+          button.addEventListener('click', function () {
             // Copy to clipboard.
             DrupalTemplateHelper.copyValueToClipboard(this.value);
           });
@@ -171,7 +171,7 @@ var DrupalTemplateHelper = {
   },
 
   // Copies a value to the clipboard.
-  copyValueToClipboard: function (text) {
+  copyValueToClipboard: function copyValueToClipboard(text) {
     // Create a dummy textarea to hold the placeholder value.
     var textArea = document.createElement("textarea");
     textArea.value = text;
@@ -190,4 +190,4 @@ var DrupalTemplateHelper = {
     // Remove the textarea.
     document.body.removeChild(textArea);
   }
-}
+};

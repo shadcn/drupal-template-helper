@@ -1,6 +1,7 @@
 'use strict';
 
 // Connect to port and listen for messages.
+
 chrome.runtime.onConnect.addListener(function (port) {
   // Listen for message from devtools.js
   port.onMessage.addListener(function (message) {
@@ -12,7 +13,7 @@ chrome.runtime.onConnect.addListener(function (port) {
         if (tabs.length) {
           port.postMessage({
             'sender': 'drupal-template-helper-background',
-            'url': tabs[0].url,
+            'url': tabs[0].url
           });
         }
       });
@@ -21,7 +22,7 @@ chrome.runtime.onConnect.addListener(function (port) {
 });
 
 // Open Options page on browserAction click.
-chrome.browserAction.onClicked.addListener(function(tab) {
+chrome.browserAction.onClicked.addListener(function (tab) {
   if (chrome.runtime.openOptionsPage) {
     chrome.runtime.openOptionsPage();
   }

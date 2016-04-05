@@ -4,11 +4,12 @@
 // Provides helpers to save and load options.
 
 // Drupal Template Helper Options.
+
 var DrupalTemplateHelperOptions = {
 
   // Save settings.
-  save: function (settings, callback) {
-    chrome.storage.sync.set(settings, function(settings) {
+  save: function save(settings, callback) {
+    chrome.storage.sync.set(settings, function (settings) {
       if (typeof callback !== 'undefined') {
         callback(settings);
       }
@@ -16,8 +17,8 @@ var DrupalTemplateHelperOptions = {
   },
 
   // Returns settings.
-  get: function (settings, callback) {
-    chrome.storage.sync.get(settings, function(settings) {
+  get: function get(settings, callback) {
+    chrome.storage.sync.get(settings, function (settings) {
       if (typeof callback !== 'undefined') {
         callback(settings);
       }
@@ -25,14 +26,14 @@ var DrupalTemplateHelperOptions = {
   },
 
   // Shows an alert.
-  alert: function (message, type) {
+  alert: function alert(message, type) {
     var type = type || 'success';
     var $alert = document.getElementById('alerts');
     $alert.innerHTML = '<div class="alert ' + type + '">' + message + '</div>';
   },
 
   // Logs a message to the console.
-  log: function (message) {
+  log: function log(message) {
     chrome.extension.getBackgroundPage().console.log(message);
   }
-}
+};

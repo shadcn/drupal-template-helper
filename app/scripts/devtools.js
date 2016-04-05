@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
 var DrupalTemplateHelperDevtools = {
 
   // Determines if the devtools panels should be shown.
-  showForURL: function (urlString) {
+  showForURL: function showForURL(urlString) {
     DrupalTemplateHelperOptions.get(['enabledSites'], function (settings) {
       // Create a URL object from urlString.
       var url = new URL(urlString);
@@ -45,10 +45,10 @@ var DrupalTemplateHelperDevtools = {
   },
 
   // Creates the devtools panels.
-  create: function () {
+  create: function create() {
     // Inject css into the devtools panel.
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../css/theme.css", false);
+    xhr.open("GET", "../styles/theme.css", false);
     xhr.send();
     chrome.devtools.panels.applyStyleSheet(xhr.responseText);
 

@@ -23,7 +23,10 @@ body {
 }
 #template-helper-options .form__item {
   padding: 10px;
-  margin: 0 0 1em;
+}
+#template-helper-options .form__item--note {
+  margin: 0 10px 10px;
+  background: #eee;
 }
 #template-helper-options .form__item label {
   font-weight: bold;
@@ -35,6 +38,7 @@ body {
   padding: 5px;
   margin: 0 0 5px;
   width: 100%;
+  min-height: 250px;
 }
 #template-helper-options .form__item .description {
   font-size: 0.85em;
