@@ -1,6 +1,6 @@
 /**
  * @file
- * Style for the Twig helper theme.
+ * Style for the Template helper theme.
  */
 #elements-content /deep/ .webkit-html-comment {
   display: none !important;

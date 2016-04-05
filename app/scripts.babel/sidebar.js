@@ -1,14 +1,14 @@
 'use strict';
 
-// Adds a Twig sidebar panel to Chrome DevTools.
-// When an element is selected, we figure out its Twig Helper comments.
+// Adds a Template sidebar panel to Chrome DevTools.
+// When an element is selected, we figure out its Template Helper comments.
 
-// Show Twig templates when Twig panel is opened.
+// Show Template templates when Template panel is opened.
 window.addEventListener('load', function() {
-  DrupalTwigHelper.showTwigTemplates();
+  DrupalTemplateHelper.showTemplates();
 });
 
-// Show Twig templates when an element is selected in the Elements panel.
+// Show Template templates when an element is selected in the Elements panel.
 chrome.devtools.panels.elements.onSelectionChanged.addListener(function(){
-  DrupalTwigHelper.showTwigTemplates();
+  DrupalTemplateHelper.showTemplates();
 });

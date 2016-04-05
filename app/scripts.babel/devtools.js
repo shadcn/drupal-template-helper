@@ -1,15 +1,15 @@
 'use strict';
 
-// Twig DevTools Panel.
+// Template DevTools Panel.
 
 window.addEventListener('load', function () {
   // Create a port for messaging between devtools.js and background.js
-  var port = chrome.runtime.connect({ name: "drupal-twig-helper" });
+  var port = chrome.runtime.connect({ name: "drupal-template-helper" });
 
   // Ask the background page for the current tab url.
   try {
     port.postMessage({
-      'sender': 'drupal-twig-helper-devtools',
+      'sender': 'drupal-template-helper-devtools',
       'message': 'current-tab-url'
     });
   } catch (e) {
@@ -18,18 +18,18 @@ window.addEventListener('load', function () {
 
   // Listen for incoming messages on this port.
   port.onMessage.addListener(function (message) {
-    if (message.sender == 'drupal-twig-helper-background') {
-      DrupalTwigHelperDevtools.showForURL(message.url);
+    if (message.sender == 'drupal-template-helper-background') {
+      DrupalTemplateHelperDevtools.showForURL(message.url);
     }
   });
 });
 
-// Drupal Twig Helper DevTools.
-var DrupalTwigHelperDevtools = {
+// Drupal Template Helper DevTools.
+var DrupalTemplateHelperDevtools = {
 
   // Determines if the devtools panels should be shown.
   showForURL: function (urlString) {
-    DrupalTwigHelperOptions.get(['enabledSites'], function (settings) {
+    DrupalTemplateHelperOptions.get(['enabledSites'], function (settings) {
       // Create a URL object from urlString.
       var url = new URL(urlString);
 
@@ -37,7 +37,7 @@ var DrupalTwigHelperDevtools = {
       var enabledURLs = settings.enabledSites.split(',');
       for (var i in enabledURLs) {
         if (url.origin == enabledURLs[i].replace(/(\s|\/$)/gmi, '')) {
-          DrupalTwigHelperDevtools.create();
+          DrupalTemplateHelperDevtools.create();
           break;
         }
       }
@@ -52,8 +52,8 @@ var DrupalTwigHelperDevtools = {
     xhr.send();
     chrome.devtools.panels.applyStyleSheet(xhr.responseText);
 
-    // Add a Twig sidebar panel.
-    chrome.devtools.panels.elements.createSidebarPane('Twig', function (sidebar) {
+    // Add a Template sidebar panel.
+    chrome.devtools.panels.elements.createSidebarPane('Template', function (sidebar) {
       // Load sidebar.html into the sidebar.
       sidebar.setPage('../pages/sidebar.html');
 

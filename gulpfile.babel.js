@@ -119,7 +119,7 @@ gulp.task('wiredep', () => {
 gulp.task('package', function () {
   var manifest = require('./dist/manifest.json');
   return gulp.src('dist/**')
-      .pipe($.zip('drupal twig helper-' + manifest.version + '.zip'))
+      .pipe($.zip('drupal template helper-' + manifest.version + '.zip'))
       .pipe(gulp.dest('package'));
 });
 

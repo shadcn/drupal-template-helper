@@ -1,15 +1,15 @@
 'use strict';
 
-// Drupal Twig Helper.
+// Drupal Template Helper.
 
 // The comment node type.
 var COMMENT_NODE_TYPE = 8;
 
-// The Twig panel element.
-var $TWIG_PANEL = document.getElementById('twig-panel');
+// The Template panel element.
+var $TEMPLATE_PANEL = document.getElementById('template-panel');
 
 // The error message to show when no template is found.
-var TWIG_HELPER_ERROR_MESSAGE = 'No templates found.';
+var TEMPLATE_HELPER_ERROR_MESSAGE = 'No templates found.';
 
 // Template helper info.
 var TEMPLATE_HELPER_REGEX = {
@@ -35,15 +35,15 @@ var TEMPLATE_HELPER_REGEX = {
   }
 };
 
-// Drupal Twig Helper.
-var DrupalTwigHelper = {
+// Drupal Template Helper.
+var DrupalTemplateHelper = {
 
   // Return Theme debug comments for an element.
   getCommentsForElement: function (element) {
     var comments = [];
 
     // Loop through previous siblings until we hit <-- THEME DEBUG -->.
-    // Assumming <-- THEME DEBUG --> is where the Twig helper comments starts.
+    // Assumming <-- THEME DEBUG --> is where the Template helper comments starts.
     var prevSibling = element.previousSibling;
     while (!/\s+THEME DEBUG\s+/i.test(prevSibling.nodeValue)) {
       if (prevSibling.nodeType === 8) {
@@ -55,28 +55,28 @@ var DrupalTwigHelper = {
     return comments;
   },
 
-  // Show Twig templates callback.
-  showTwigTemplates: function () {
-    chrome.devtools.inspectedWindow.eval("(" + DrupalTwigHelper.getCommentsForElement.toString() + ")($0)", function (result, exceptionInfo) {
+  // Show Template templates callback.
+  showTemplates: function () {
+    chrome.devtools.inspectedWindow.eval("(" + DrupalTemplateHelper.getCommentsForElement.toString() + ")($0)", function (result, exceptionInfo) {
       // Log message if error.
       if (typeof exceptionInfo !== 'undefined') {
-        DrupalTwigHelper.log(TWIG_HELPER_ERROR_MESSAGE);
+        DrupalTemplateHelper.log(TEMPLATE_HELPER_ERROR_MESSAGE);
         return;
       }
 
       // Get templates from result and display.
-      var templates = DrupalTwigHelper.getTemplatesFromComments(result);
-      DrupalTwigHelper.logTemplates(templates);
+      var templates = DrupalTemplateHelper.getTemplatesFromComments(result);
+      DrupalTemplateHelper.logTemplates(templates);
     });
   },
 
-  // Returns an array of templates from Twig helper comments.
+  // Returns an array of templates from Template helper comments.
   getTemplatesFromComments: function (comments) {
     var templates = [];
 
     for (var i in comments) {
       var comment = comments[i];
-      templates.push(DrupalTwigHelper.parseComment(comment));
+      templates.push(DrupalTemplateHelper.parseComment(comment));
     }
 
     return templates;
@@ -109,9 +109,9 @@ var DrupalTwigHelper = {
     return output;
   },
 
-  // Logs a message to the Twig panel.
+  // Logs a message to the Template panel.
   log: function (message) {
-    $TWIG_PANEL.innerHTML = '<p class="message">' + message + '<p>';
+    $TEMPLATE_PANEL.innerHTML = '<p class="message">' + message + '<p>';
   },
 
   logTemplates: function (templates) {
@@ -154,7 +154,7 @@ var DrupalTwigHelper = {
           button.value = safeValue;
           button.addEventListener('click', function() {
             // Copy to clipboard.
-            DrupalTwigHelper.copyValueToClipboard(this.value);
+            DrupalTemplateHelper.copyValueToClipboard(this.value);
           });
           valuesListItem.appendChild(button);
 
@@ -166,8 +166,8 @@ var DrupalTwigHelper = {
       }
     }
 
-    $TWIG_PANEL.innerHTML = '';
-    $TWIG_PANEL.appendChild(list);
+    $TEMPLATE_PANEL.innerHTML = '';
+    $TEMPLATE_PANEL.appendChild(list);
   },
 
   // Copies a value to the clipboard.

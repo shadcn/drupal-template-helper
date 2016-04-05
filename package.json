@@ -1,5 +1,5 @@
 {
-  "name": "drupal-twig-helper",
+  "name": "drupal-template-helper",
   "private": true,
   "engines": {
     "node": ">=0.8.0"

@@ -9,43 +9,43 @@ body {
   padding: 0;
   margin: 0;
 }
-#twig-helper-options #alerts {
+#template-helper-options #alerts {
 
 }
-#twig-helper-options .alert {
+#template-helper-options .alert {
   margin: 0;
   padding: 8px 10px;
   color: white;
   background: #2ecc71;
 }
-#twig-helper-options .alert.error {
+#template-helper-options .alert.error {
   background: #e74c3c;
 }
-#twig-helper-options .form__item {
+#template-helper-options .form__item {
   padding: 10px;
   margin: 0 0 1em;
 }
-#twig-helper-options .form__item label {
+#template-helper-options .form__item label {
   font-weight: bold;
   display: block;
   margin: 0 0 5px;
 }
-#twig-helper-options .form__item textarea {
+#template-helper-options .form__item textarea {
   display: block;
   padding: 5px;
   margin: 0 0 5px;
   width: 100%;
 }
-#twig-helper-options .form__item .description {
+#template-helper-options .form__item .description {
   font-size: 0.85em;
   color: #969696;
   margin: 0;
 }
-#twig-helper-options .form__actions {
+#template-helper-options .form__actions {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 10px;
 }
-#twig-helper-options footer {
+#template-helper-options footer {
   padding: 10px;
 }

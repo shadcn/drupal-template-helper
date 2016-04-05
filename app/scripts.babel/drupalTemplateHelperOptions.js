@@ -1,10 +1,10 @@
 'use strict';
 
-// Drupal Twig Helper Options.
+// Drupal Template Helper Options.
 // Provides helpers to save and load options.
 
-// Drupal Twig Helper Options.
-var DrupalTwigHelperOptions = {
+// Drupal Template Helper Options.
+var DrupalTemplateHelperOptions = {
 
   // Save settings.
   save: function (settings, callback) {

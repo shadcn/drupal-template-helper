@@ -1,46 +1,46 @@
 /**
  * @file
- * Style for Twig sidebar panel.
+ * Style for Template sidebar panel.
  */
 body {
   padding: 0;
   margin: 0;
 }
 
-#twig-panel .message {
+#template-panel .message {
   padding: 5px 10px;
 }
 
-#twig-panel ul {
+#template-panel ul {
   list-style: none outside none;
   margin: 0;
   padding: 0;
 }
-#twig-panel ul li {
+#template-panel ul li {
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #eee;
   min-height: 18px;
   overflow: hidden;
 }
-#twig-panel ul li code {
+#template-panel ul li code {
   float: left;
   max-width: 80%;
 }
-#twig-panel ul li button {
+#template-panel ul li button {
   float: right;
 }
-#twig-panel ul li.selected {
+#template-panel ul li.selected {
   font-weight: bold;
   color: rgb(200, 0, 0);
 }
-#twig-panel .label {
+#template-panel .label {
   display: block;
   margin-bottom: 3px;
   background-color: #ddd;
   padding: 3px 10px;
 }
-#twig-panel ul ul li {
+#template-panel ul ul li {
   display: block;
   font-size: 12px;
   line-height: 120%;

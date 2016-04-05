@@ -1,20 +1,20 @@
 'use strict';
 
-// Options page for the Drupal Twig Helper Extension.
+// Options page for the Drupal Template Helper Extension.
 
 // Attach restore event to dom loaded.
 document.addEventListener('DOMContentLoaded', function () {
-  DrupalTwigHelperOptions.get(['enabledSites'], function (settings) {
-    document.getElementById('twig-helper-enabled-sites').value = settings.enabledSites || '';
+  DrupalTemplateHelperOptions.get(['enabledSites'], function (settings) {
+    document.getElementById('template-helper-enabled-sites').value = settings.enabledSites || '';
   })
 });
 
 // Attach save event to save button.
 document.getElementById('save').addEventListener('click', function () {
   // Save settings.
-  DrupalTwigHelperOptions.save({
-    enabledSites: document.getElementById('twig-helper-enabled-sites').value
+  DrupalTemplateHelperOptions.save({
+    enabledSites: document.getElementById('template-helper-enabled-sites').value
   }, function () {
-    DrupalTwigHelperOptions.alert('Options saved successfully');
+    DrupalTemplateHelperOptions.alert('Options saved successfully');
   });
 });

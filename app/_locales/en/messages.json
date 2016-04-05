@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Drupal Twig Helper",
+    "message": "Drupal Template Helper",
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "DevTools helper for Drupal Twig templates",
+    "message": "DevTools helper for Drupal templates",
     "description": "The description of the application"
   }
 }
