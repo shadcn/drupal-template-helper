@@ -6,7 +6,7 @@ A Chrome DevTools extension for Drupal templates: https://chrome.google.com/webs
 ## Installation
 ##### Step 1: Install and configure.
 1. Download and install the Drupal Template Helper extension for Chrome.
-2. Visit [http://chrome://extensions](http://chrome://extensions).
+2. Click on the extension icon. 
 3. Click on Options under Drupal Template Helper.
 4. Add the urls for sites to enable the extension. Example: `http://drupal.dev, http://www.drupal.dev`.
 5. Save.
