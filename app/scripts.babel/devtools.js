@@ -53,7 +53,7 @@ var DrupalTemplateHelperDevtools = {
     chrome.devtools.panels.applyStyleSheet(xhr.responseText);
 
     // Add a Template sidebar panel.
-    chrome.devtools.panels.elements.createSidebarPane('Template', function (sidebar) {
+    chrome.devtools.panels.elements.createSidebarPane('Templates', function (sidebar) {
       // Load sidebar.html into the sidebar.
       sidebar.setPage('../pages/sidebar.html');
 
