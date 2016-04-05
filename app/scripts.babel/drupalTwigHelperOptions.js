@@ -7,7 +7,7 @@
 var DrupalTwigHelperOptions = {
 
   // Save settings.
-  save: function(settings, callback) {
+  save: function (settings, callback) {
     chrome.storage.sync.set(settings, function(settings) {
       if (typeof callback !== 'undefined') {
         callback(settings);
@@ -16,7 +16,7 @@ var DrupalTwigHelperOptions = {
   },
 
   // Returns settings.
-  get: function(settings, callback) {
+  get: function (settings, callback) {
     chrome.storage.sync.get(settings, function(settings) {
       if (typeof callback !== 'undefined') {
         callback(settings);
@@ -25,7 +25,7 @@ var DrupalTwigHelperOptions = {
   },
 
   // Shows an alert.
-  alert: function(message, type) {
+  alert: function (message, type) {
     var type = type || 'success';
     var $alert = document.getElementById('alerts');
     $alert.innerHTML = '<div class="alert ' + type + '">' + message + '</div>';

@@ -39,7 +39,7 @@ var TEMPLATE_HELPER_REGEX = {
 var DrupalTwigHelper = {
 
   // Return Theme debug comments for an element.
-  getCommentsForElement: function(element) {
+  getCommentsForElement: function (element) {
     var comments = [];
 
     // Loop through previous siblings until we hit <-- THEME DEBUG -->.
@@ -56,7 +56,7 @@ var DrupalTwigHelper = {
   },
 
   // Show Twig templates callback.
-  showTwigTemplates: function() {
+  showTwigTemplates: function () {
     chrome.devtools.inspectedWindow.eval("(" + DrupalTwigHelper.getCommentsForElement.toString() + ")($0)", function (result, exceptionInfo) {
       // Log message if error.
       if (typeof exceptionInfo !== 'undefined') {
@@ -71,7 +71,7 @@ var DrupalTwigHelper = {
   },
 
   // Returns an array of templates from Twig helper comments.
-  getTemplatesFromComments: function(comments) {
+  getTemplatesFromComments: function (comments) {
     var templates = [];
 
     for (var i in comments) {
