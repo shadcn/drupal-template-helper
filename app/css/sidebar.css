@@ -32,6 +32,7 @@ body {
 }
 #twig-panel ul li.selected {
   font-weight: bold;
+  color: rgb(200, 0, 0);
 }
 #twig-panel .label {
   display: block;

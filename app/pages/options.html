@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drupal Twig Helper</title>
+    <link rel="stylesheet" href="../css/options.css" />
+  </head>
+  <body>
+    <div id="twig-helper-options">
+      <main>
+        <div id="alerts"></div>
+        <div class="form__item">
+          <label>Enable the Twig Helper for these sites:</label>
+          <textarea name="twig_helper_enabled_sites" id="twig-helper-enabled-sites"></textarea>
+          <p class="description">Enter a list of comma-separated sites url.</p>
+          <p class="description">Example: http://drupal.dev, http://drupal.local, http://www.drupal.dev.</p>
+        </div>
+        <div class="form__actions">
+          <button id="save">Save Options</button>
+        </div>
+      </main>
+      <footer>
+        <small>Need help? Create an issue on <a href="https://github.com/arshad/drupal-twig-helper">Github</a>.</small>
+      </footer>
+    </div>
+    <script src="../scripts/drupalTwigHelperOptions.js"></script>
+    <script src="../scripts/options.js"></script>
+  </body>
+</html>

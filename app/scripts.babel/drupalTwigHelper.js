@@ -20,7 +20,7 @@ var TEMPLATE_HELPER_REGEX = {
   },
   "template_suggestions": {
     "title" : "Template suggestions",
-    "regex" : "([\\*|x]\\s?\\S*)",
+    "regex" : "([\\*|x]\\s{1}\\S*)",
     "modifier" : "gmi",
   },
   "theme_hook": {
@@ -93,7 +93,6 @@ var DrupalTwigHelper = {
 
         // Loop for multiline modifiers.
         if (templateHelperInfo.modifier.indexOf('m') !== -1) {
-          output.values = [];
           while ((matches = regex.exec(comment)) !== null) {
             output.values.push(matches[1]);
           }
@@ -131,10 +130,10 @@ var DrupalTwigHelper = {
         for (var j in template.values) {
           var valuesListItem = document.createElement('li');
           var value = template.values[j];
-          var safeValue = value.replace(/([x|*]\s?)/g, '');;
+          var safeValue = value.replace(/([x|*]\s{1})/g, '');;
 
           // Highlight current template.
-          var regex = new RegExp("(x\\s?\\S*)", "i");
+          var regex = new RegExp("(x\\s{1}\\S*)", "i");
           if (value.match(regex)) {
             valuesListItem.className = 'selected';
           }
