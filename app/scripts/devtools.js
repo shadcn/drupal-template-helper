@@ -46,11 +46,16 @@ var DrupalTemplateHelperDevtools = {
 
   // Creates the devtools panels.
   create: function create() {
-    // Inject css into the devtools panel.
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../styles/theme.css", false);
-    xhr.send();
-    chrome.devtools.panels.applyStyleSheet(xhr.responseText);
+    DrupalTemplateHelperOptions.get(['showComments'], function (settings) {
+      // Add CSS to hide comments if enabled.
+      if (!settings.showComments) {
+        // Inject css into the devtools panel.
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "../styles/theme.css", false);
+        xhr.send();
+        chrome.devtools.panels.applyStyleSheet(xhr.responseText);
+      }
+    });
 
     // Add a Template sidebar panel.
     chrome.devtools.panels.elements.createSidebarPane('Templates', function (sidebar) {

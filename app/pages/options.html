@@ -14,8 +14,10 @@
           <p class="description">Enter a list of comma-separated sites url.</p>
           <p class="description">Example: http://drupal.dev, http://drupal.local, http://www.drupal.dev.</p>
         </div>
-        <div class="form__item form__item--note">
-          <p class="description">Note: Enable "Allow custom UI themes" under DevTools Settings to hide Twig comments in HTML Markup.</p>
+        <div class="form__item">
+          <label><input type="checkbox" id="template-helper-show-comments" name="template-helper-show-comments"> Show HTML comments.</label>
+          <p class="description">If checked, Twig comments will not be hidden in the DevTools Inspector.</p>
+          <p class="description">If unchecked, enable "Allow custom UI themes" under DevTools Settings to hide Twig comments in HTML Markup.</p>
         </div>
         <div class="form__actions">
           <button id="save">Save Options</button>
