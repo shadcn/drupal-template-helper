@@ -1,18 +1,18 @@
 # Drupal Template Helper
-A Chrome DevTools extension for Drupal templates.
+A Chrome DevTools extension for Drupal 8 and Drupal 7 templates: https://chrome.google.com/webstore/detail/ppiceaegogijpjodfpiimifhbnaifbnn
 
 ![drupal-template-helper](https://cloud.githubusercontent.com/assets/124599/14293486/d561f37e-fb7d-11e5-8ed0-952d520678a4.png)
 
 ## Installation
 ##### Step 1: Install and configure.
 1. Download and install the Drupal Template Helper extension for Chrome.
-2. Visit [http://chrome://extensions](http://chrome://extensions).
+2. Click on the extension icon. 
 3. Click on Options under Drupal Template Helper.
 4. Add the urls for sites to enable the extension. Example: `http://drupal.dev, http://www.drupal.dev`.
 5. Save.
 
 ##### Step 2: Enable Chrome Experimental APIs.
-1. Go to chrome://flags, find "Experimental Extension APIs", click its "Enable" link, and restart Chrome.
+1. Go to chrome://flags/#enable-devtools-experiments, find **Experimental Extension APIs** and **Developer Tools experiments**, click the "Enable" links, and restart Chrome.
 2. Open DevTools and click on Settings.
 3. Find the **Experiments** tab and enable **Allow custom UI themes**. See screenshot below.
 
