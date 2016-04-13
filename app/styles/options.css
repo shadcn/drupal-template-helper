@@ -38,7 +38,7 @@ body {
   padding: 5px;
   margin: 0 0 5px;
   width: 100%;
-  min-height: 250px;
+  min-height: 200px;
 }
 #template-helper-options .form__item .description {
   font-size: 0.85em;

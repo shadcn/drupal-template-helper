@@ -19,7 +19,6 @@ body {
 #template-panel ul li {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #eee;
   min-height: 18px;
   overflow: hidden;
 }
@@ -46,4 +45,15 @@ body {
   line-height: 120%;
   padding: 3px 10px;
   border: 0;
+}
+
+/**
+ * Dark theme.
+ */
+.dark-theme {
+  background: #242424;
+  color: #BDC6CF;
+}
+.dark-theme #template-panel .label {
+  background-color: #353535;
 }
