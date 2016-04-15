@@ -14,7 +14,7 @@ A Chrome DevTools extension for Drupal 8 and Drupal 7 templates: https://chrome.
 ##### Step 2: Enable Chrome Experimental APIs.
 1. Go to chrome://flags/#enable-devtools-experiments, find **Experimental Extension APIs** and **Developer Tools experiments**, click the "Enable" links, and restart Chrome.
 2. Open DevTools and click on Settings.
-3. Find the **Experiments** tab and enable **Allow custom UI themes**. See screenshot below.
+3. Find the **Experiments** tab and enable **Allow custom UI themes**. See screenshot below. Don't forget to restart Chrome again.
 
 ![drupal-template-devtools-theme-ui](https://cloud.githubusercontent.com/assets/124599/14293054/e6350e72-fb7b-11e5-973a-31794db51e4d.png)
 
