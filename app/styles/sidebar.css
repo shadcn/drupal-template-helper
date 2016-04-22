@@ -46,6 +46,9 @@ body {
   padding: 3px 10px;
   border: 0;
 }
+#template-panel ul ul li:hover {
+  background: #eee;
+}
 
 /**
  * Dark theme.
