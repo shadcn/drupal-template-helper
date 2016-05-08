@@ -1,0 +1,8 @@
+## 1.0.0 / 2016-05-09
+================
+* d53615e Add hover for templates
+* d0ab43b Merge pull request #6 from pjbaert/patch-1
+* 9fe8e63 Update README.md - extra mention to restart Chrome
+* 2bd026f Issue #3: add option to toggle the dark theme
+* 7101c18 Merge branch 'master' of github.com:arshad/drupal-twig-helper
+* 0b8459f Issue #4: Add option to show Twig comments
