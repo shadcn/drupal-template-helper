@@ -31,7 +31,7 @@ body {
 }
 #template-panel ul li.selected {
   font-weight: bold;
-  color: rgb(200, 0, 0);
+  color: #00e;
 }
 #template-panel .label {
   display: block;
@@ -42,7 +42,7 @@ body {
 #template-panel ul ul li {
   display: block;
   font-size: 12px;
-  line-height: 120%;
+  line-height: 140%;
   padding: 3px 10px;
   border: 0;
 }
