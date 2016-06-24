@@ -116,7 +116,7 @@ var DrupalTemplateHelper = {
 
   logTemplates: function logTemplates(templates) {
     var list = document.createElement('ul');
-
+    var highlighted = false;
     for (var i in templates) {
       var template = templates[i];
 
@@ -144,8 +144,9 @@ var DrupalTemplateHelper = {
 
           // Highlight current template.
           var regex = new RegExp("(x\\s{1}\\S*)", "i");
-          if (value.match(regex)) {
+          if (!highlighted && value.match(regex)) {
             valuesListItem.className = 'selected';
+            highlighted = true;
           }
 
           // Add code.
