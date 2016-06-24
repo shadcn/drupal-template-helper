@@ -34,7 +34,7 @@ var DrupalTemplateHelperDevtools = {
       var url = new URL(urlString);
 
       // Enable devtools panels if url matches.
-      var enabledURLs = settings.enabledSites.split(',');
+      var enabledURLs = settings.enabledSites.split(/,?\s+/);
       for (var i in enabledURLs) {
         var value = enabledURLs[i].replace(/(\s|\/$)/gmi, '');
 
