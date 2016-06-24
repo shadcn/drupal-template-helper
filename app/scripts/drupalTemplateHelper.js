@@ -135,7 +135,12 @@ var DrupalTemplateHelper = {
         for (var j in template.values) {
           var valuesListItem = document.createElement('li');
           var value = template.values[j];
-          var safeValue = value.replace(/([x|*]\s{1})/g, '');;
+          var safeValue = value.replace(/([x|*]\s{1})/g, '');
+
+          // Create the function call.
+          if (template.title == 'Hook') {
+            safeValue = DrupalTemplateHelper.getHookPreprocesFunctionForHook(value);
+          }
 
           // Highlight current template.
           var regex = new RegExp("(x\\s{1}\\S*)", "i");
@@ -189,5 +194,10 @@ var DrupalTemplateHelper = {
 
     // Remove the textarea.
     document.body.removeChild(textArea);
+  },
+
+  getHookPreprocesFunctionForHook: function (hook) {
+    return 'function THEMENAME_preprocess_' + hook + '(&$variables) { }';
   }
 };
+
