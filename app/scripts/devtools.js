@@ -36,7 +36,10 @@ var DrupalTemplateHelperDevtools = {
       // Enable devtools panels if url matches.
       var enabledURLs = settings.enabledSites.split(',');
       for (var i in enabledURLs) {
-        if (url.origin == enabledURLs[i].replace(/(\s|\/$)/gmi, '')) {
+        var value = enabledURLs[i].replace(/(\s|\/$)/gmi, '');
+
+        // Add support for wildcards.
+        if (url.origin == value || (new RegExp(value.split("*").join(".*")).test(url.origin))) {
           DrupalTemplateHelperDevtools.create();
           break;
         }
