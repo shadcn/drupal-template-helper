@@ -139,7 +139,7 @@ var DrupalTemplateHelper = {
 
           // Create the function call.
           if (template.title == 'Hook') {
-            safeValue = DrupalTemplateHelper.getHookPreprocesFunctionForHook(value);
+            safeValue = DrupalTemplateHelper.getHookPreprocessFunctionForHook(value);
           }
 
           // Highlight current template.
@@ -196,7 +196,8 @@ var DrupalTemplateHelper = {
     document.body.removeChild(textArea);
   },
 
-  getHookPreprocesFunctionForHook: function (hook) {
+  // Returns the function definition for a hook.
+  getHookPreprocessFunctionForHook: function (hook) {
     return 'function THEMENAME_preprocess_' + hook + '(&$variables) { }';
   }
 };
