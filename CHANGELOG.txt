@@ -1,3 +1,12 @@
+## 1.1.0 / 2016-06-25
+================
+7b80c26 Fixes #2: Add support for spaces or commas on site list
+7ac9bab Fixes #1: Adds support for wildcards
+1a158e2 Change color of highlighted templates
+0f97901 Fix multiple highlighted templates bug
+9f10acd Fix typo in function name
+66e7958 Add information about the preprocess hook to call
+
 ## 1.0.0 / 2016-05-09
 ================
 * d53615e Add hover for templates
