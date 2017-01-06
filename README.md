@@ -18,6 +18,10 @@ A Chrome DevTools extension for Drupal 8, Drupal 7 and Backdrop CMS templates: h
 
 ![drupal-template-devtools-theme-ui](https://cloud.githubusercontent.com/assets/124599/14293054/e6350e72-fb7b-11e5-973a-31794db51e4d.png)
 
+4. If you want to hide the Twig comments, uncheck **Show HTML comments** under **Preferences**.
+
+![drupal-template-devtools-preferences](https://cloud.githubusercontent.com/assets/124599/21719927/b5c16cb2-d439-11e6-8cc7-a84192aa822a.png)
+
 ##### Step 3: Enable theme debug
 * For Drupal 8, see Phil's article here: https://www.chapterthree.com/blog/drupal-8-theming-setting-theme-debugging
 * For Drupal 7, see https://www.drupal.org/node/223440.
