@@ -28,6 +28,8 @@ body {
 }
 #template-panel ul li button {
   float: right;
+  border-radius: 3px;
+  font-size: 10px;
 }
 #template-panel ul li.selected {
   font-weight: bold;
@@ -59,4 +61,18 @@ body {
 }
 .dark-theme #template-panel .label {
   background-color: #353535;
+}
+.dark-theme #template-panel ul ul li:hover {
+  background: #252d36;
+}
+.dark-theme #template-panel ul li.selected {
+  color: #f29767;
+}
+.dark-theme #template-panel ul li button {
+  background-color: #252d36;
+  color: #BDC6CF;
+  border: 1px solid #454545;
+}
+.dark-theme #template-panel ul li button:hover {
+  background: #454545;
 }
