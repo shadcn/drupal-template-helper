@@ -2,9 +2,11 @@
  * @file
  * Style for the Template helper theme.
  */
-#elements-content /deep/ .webkit-html-comment {
+.webkit-html-comment,
+.comments-items {
   display: none !important;
 }
-#elements-content /deep/ .elements-disclosure li {
+
+.elements-disclosure li {
   min-height: 0 !important;
 }
