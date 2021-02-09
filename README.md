@@ -4,6 +4,15 @@ A Chrome DevTools extension for Drupal 8, Drupal 7 and Backdrop CMS templates: h
 ![drupal-template-helper](https://cloud.githubusercontent.com/assets/124599/14293486/d561f37e-fb7d-11e5-8ed0-952d520678a4.png)
 
 ## Installation
+
+**The Chrome Web Store made some changes to their policies. I haven't had time to re-upload this extension.**
+
+**For now, you can download it from GitHub and load it as an unpacked extension on Chrome.**
+
+**1. Download https://github.com/arshad/drupal-template-helper/archive/master.zip**
+**2. Go to `chrome://extensions` in Chrome.**
+**3. Click on "Load unpacked".**
+
 ##### Step 1: Install and configure.
 1. Download and install the Drupal Template Helper extension for Chrome.
 2. Click on the extension icon. 
