@@ -53,10 +53,10 @@ var DrupalTemplateHelperDevtools = {
       // Add CSS to hide comments if enabled.
       if (!settings.showComments) {
         // Inject css into the devtools panel.
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "../styles/theme.css", false);
-        xhr.send();
-        chrome.devtools.panels.applyStyleSheet(xhr.responseText);
+        fetch('../styles/theme.css')
+        .then(res => res.text())
+        .then(styles => chrome.devtools.panels.applyStyleSheet(styles))
+        .catch(e => console.error(e));
       }
     });
 
